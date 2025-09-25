@@ -1,0 +1,286 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1d5032; /* hijau tua */
+    padding: 15px;
+}
+
+header nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    background-color: #295c37; /* hijau lebih terang */
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    color: #f7e35b; /* kuning */
+    margin-bottom: 20px;
+}
+
+.hero a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 20px;
+    background-color: #f7e35b;
+    color: #000;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero a:hover {
+    background-color: #ffe34d;
+}
+
+.program {
+    background: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.program h2 {
+    margin-bottom: 40px;
+}
+
+.program div {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    padding: 20px;
+    background: #fafafa;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+form {
+    max-width: 500px;
+    margin: 50px auto;
+    background: #295c37;
+    padding: 30px;
+    border-radius: 12px;
+    color: white;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: none;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background: #f7e35b;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #ffe34d;
+}
+
+/* Biaya & Pendaftaran */
+.pricing-form {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.pricing-form h2 {
+  font-size: 24px;
+  color: #5d481a;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin: 15px 0;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  background: #2f6536;
+  color: #fff;
+  font-size: 16px;
+}
+
+.total-harga {
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.total-harga h3 {
+  color: #ffffff;
+  font-size: 26px;
+  margin-top: 5px;
+}
+
+.btn-daftar {
+  margin-top: 25px;
+  background: #e78326;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn-daftar:hover {
+  background: #ec8835;
+}
+
+/* Contact Section */
+.contact-section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 26px;
+  color: #1a5d2f;
+  margin-bottom: 10px;
+}
+
+.contact-section p {
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.contact-form .form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.btn-kirim {
+  background: #2f6536;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-kirim:hover {
+  background: #244d2b;
+}
+
+.contact-info h3 {
+  margin-top: 15px;
+  color: #1a5d2f;
+  font-size: 18px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #1a5d2f;
+  color: #fff;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+  color: #fff;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+.nav-menu ul li a:hover {
+  color: #f2c94c;
+}
+
+.nav-login {
+  margin-left: auto;
+}
+
+.btn-login {
+  background: #f2c94c;
+  color: #1a5d2f;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn-login:hover {
+  background: #e0b93d;
+}
