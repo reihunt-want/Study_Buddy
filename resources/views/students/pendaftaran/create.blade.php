@@ -15,22 +15,22 @@
             <select name="jenjang" id="jenjang" class="w-full border p-2 rounded" required>
                 <option value="">-- Pilih Jenjang --</option>
                 <optgroup label="SD">
-                    <option value="SD1">SD 1</option>
-                    <option value="SD2">SD 2</option>
-                    <option value="SD3">SD 3</option>
-                    <option value="SD4">SD 4</option>
-                    <option value="SD5">SD 5</option>
-                    <option value="SD6">SD 6</option>
+                    <option value="sd1">SD 1</option>
+                    <option value="sd2">SD 2</option>
+                    <option value="sd3">SD 3</option>
+                    <option value="sd4">SD 4</option>
+                    <option value="sd5">SD 5</option>
+                    <option value="sd6">SD 6</option>
                 </optgroup>
                 <optgroup label="SMP">
-                    <option value="SMP1">SMP 1</option>
-                    <option value="SMP2">SMP 2</option>
-                    <option value="SMP3">SMP 3</option>
+                    <option value="smp1">SMP 1</option>
+                    <option value="smp2">SMP 2</option>
+                    <option value="smp3">SMP 3</option>
                 </optgroup>
                 <optgroup label="SMA">
-                    <option value="SMA1">SMA 1</option>
-                    <option value="SMA2">SMA 2</option>
-                    <option value="SMA3">SMA 3</option>
+                    <option value="sma1">SMA 1</option>
+                    <option value="sma2">SMA 2</option>
+                    <option value="sma3">SMA 3</option>
                 </optgroup>
             </select>
         </div>
@@ -84,6 +84,7 @@
 
         if (jenjang && mapel && sesi) {
             fetch(`/students/kelas/get-harga?jenjang=${jenjang}&mapel_id=${mapel}&jadwal_id=${sesi}`)
+            console.log(data);
                 .then(res => res.json())
                 .then(data => {
                     let harga = data.harga || 0;

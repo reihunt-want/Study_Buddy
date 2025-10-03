@@ -2,19 +2,28 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Transaksi extends Model
 {
+    use HasFactory;
+
     protected $table = 'transaksi';
     protected $primaryKey = 'transaksi_id';
-    public $incrementing = false;
-    protected $keyType = 'string';
+    public $incrementing = true;
+    protected $keyType = 'int';
 
-    protected $fillable = ['transaksi_id', 'pendaftaran_id', 'jumlah', 'status_bayar'];
+    protected $fillable = [
+        'pendaftaran_id',
+        'metode_bayar',
+        'jumlah',
+        'status_bayar',
+    ];
 
+    // Relasi ke Pendaftaran
     public function pendaftaran()
     {
-        return $this->belongsTo(Pendaftaran::class, 'pendaftaran_id', 'pendaftaran_id');
+        return $this->belongsTo(Pendaftaran::class, 'pendaftaran_id', 'daftar_id');
     }
 }

@@ -24,6 +24,7 @@ class Siswa extends Model
      */
     protected $primaryKey = 'user_id';
 
+    public $incrementing = false;      // kalau user_id bukan auto increment
     /**
      * The attributes that are mass assignable.
      *

@@ -33,6 +33,9 @@
                     <li class="mb-2">
                         <a href="{{ route('students.classes') }}" class="block p-2 rounded @if(request()->routeIs('students.classes')) bg-orange-500 @endif">Kelas</a>
                     </li>
+                    <li class="mb-2">
+                        <a href="{{ route('students.pendaftaran.create') }}" class="block p-2 rounded @if(request()->routeIs('students.pendaftaran.create')) bg-orange-500 @endif">Daftar Kelas</a>
+                    </li>
                 </ul>
             </nav>
         </aside>

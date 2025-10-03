@@ -30,8 +30,7 @@ class AuthController extends Controller
                     ->where('role', $request->role)
                     ->first();
 
-        if ($user && $request->password === $user->password) 
- {
+        if ($user && Hash::check($request->password, $user->password)) {
     // login dengan Laravel guard
     Auth::login($user);
 
@@ -42,6 +41,7 @@ class AuthController extends Controller
         default => redirect()->route('login.form')->with('error', 'Role tidak dikenali'),
     };
 }
+
 
 
         return back()->with('error', 'Username/Password/Role salah');

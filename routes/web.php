@@ -10,6 +10,7 @@ use App\Http\Controllers\TutorProfileController;
 use App\Http\Controllers\TutorClassController;
 use App\Http\Controllers\TutorMateriController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\PendaftaranController;
 
 // ==================== AUTH ====================
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login.form');
@@ -20,6 +21,7 @@ Route::prefix('students')->name('students.')
     ->middleware(['auth','role:siswa'])
     ->group(function () {
 
+        // halaman dashboard, profile, materi, kelas dll
         Route::get('/dashboard', function () {
             return view('students.dashboard');
         })->name('dashboard');
@@ -29,7 +31,17 @@ Route::prefix('students')->name('students.')
 
         Route::get('/materi', [StudentMateriController::class, 'index'])->name('materi');
         Route::get('/classes', [StudentClassController::class, 'index'])->name('classes');
+
+        // ==========================================
+        // Pendaftaran kelas (form & store)
+        Route::get('/pendaftaran/create', [PendaftaranController::class, 'create'])->name('pendaftaran.create');
+        Route::post('/pendaftaran/store', [PendaftaranController::class, 'store'])->name('pendaftaran.store');
+
+        // AJAX untuk ambil harga kelas
+        Route::get('/kelas/get-harga', [PendaftaranController::class, 'getHarga'])->name('students.kelas.getHarga');
+
 });
+
 
 // ==================== TUTOR ====================
 Route::prefix('tutor')->name('tutor.')
@@ -63,7 +75,6 @@ use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Auth\RegisterController;
 
-Route::post('/register/store', [RegisterController::class, 'store'])->name('register.store');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
 
@@ -78,3 +89,9 @@ Route::get('/daftar', [RegistrationController::class, 'create'])->name('register
 // web.php
 Route::post('/daftar', [RegistrationController::class, 'store'])->name('daftar.store');
 
+//Route::get('/biaya', [PendaftaranController::class, 'create'])->name('pendaftaran.create');
+//Route::post('/pendaftaran/store', [PendaftaranController::class, 'store'])->name('pendaftaran.store');
+
+
+// route ajax harga
+Route::get('/kelas/get-harga', [PendaftaranController::class, 'getHarga'])->name('kelas.getHarga');
